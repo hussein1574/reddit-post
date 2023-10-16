@@ -1,0 +1,47 @@
+@import "../../sass/abstracts/_variables.scss";
+@import "../../sass//abstracts/mixins.scss";
+.reddit-card {
+  @include card;
+  padding: 2rem;
+  top: 60%;
+  left: 38%;
+  &__profile-pic {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+  }
+  &__info {
+    display: flex;
+    gap: 20rem;
+    justify-content: space-between;
+    align-items: center;
+    &--data {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    &--btn {
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 100px;
+      font-size: 1.7rem;
+      background-color: $light-grey;
+      color: $black;
+      cursor: pointer;
+      &:link,
+      &:visited {
+        transition: all 0.3s;
+      }
+      &:hover,
+      &:active {
+        background-color: #ddd;
+      }
+    }
+  }
+  &__text {
+    padding: 2rem 0;
+    font-size: 1.7rem;
+    color: $grey;
+    border-bottom: 1px solid $light-grey;
+  }
+}

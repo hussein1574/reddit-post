@@ -1,0 +1,9 @@
+@import "../../sass/abstracts/_variables.scss";
+
+@mixin card() {
+  position: absolute;
+  background-color: $white;
+  z-index: 9999;
+  box-shadow: 0rem 0.2rem 1rem rgba($black, 0.2);
+  border-radius: 12px;
+}

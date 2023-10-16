@@ -1,0 +1,90 @@
+@import "../../sass/abstracts/_variables.scss";
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  &--right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+  &--left {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: [pic-start] 1fr 1fr [pic-end];
+    justify-items: center;
+    position: relative;
+  }
+  &__profile-pic {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    grid-row: pic-start / pic-end;
+  }
+  &__reddit {
+    font-weight: 500;
+    text-decoration: none;
+    &:link,
+    &:visited {
+      color: inherit;
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: $light-blue;
+    }
+  }
+  &__date {
+    color: $light-grey;
+  }
+  &__username {
+    color: $dark-grey;
+    font-weight: 400;
+    justify-self: start;
+    text-decoration: none;
+    &:link,
+    &:visited {
+      color: inherit;
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: $light-blue;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+    padding: 0.6rem 1.5rem;
+    background-color: $light-blue;
+    color: $white;
+    font-weight: 600;
+    font-size: inherit;
+    border-radius: 100px;
+    &:link,
+    &:visited {
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      background-color: $dark-blue;
+    }
+  }
+  &__options {
+    padding: 1rem 1rem;
+    border-radius: 50%;
+    font-size: inherit;
+    cursor: pointer;
+    &:link,
+    &:visited {
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $light-grey;
+    }
+  }
+}

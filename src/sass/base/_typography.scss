@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");
+@import "../abstracts/variables";
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.link-heading {
+  font-size: 2.5rem;
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: $black;
+    transition: all 0.3s;
+  }
+  &:hover,
+  &:active {
+    color: $dark-blue;
+    text-decoration: underline;
+  }
+}
