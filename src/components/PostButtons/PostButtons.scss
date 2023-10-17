@@ -1,0 +1,75 @@
+@import "../../sass/abstracts/_variables.scss";
+@import "../../sass/abstracts/_mixins.scss";
+
+.buttons {
+  padding: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  @include btn;
+
+  background-color: $light-grey;
+  color: $black;
+  text-decoration: none;
+  &--click {
+    &:link,
+    &:visited {
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      background-color: #ddd;
+    }
+  }
+
+  &--vote {
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 1;
+    cursor: default;
+  }
+
+  &--circle {
+    cursor: pointer;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+
+    &--up {
+      &--active,
+      &:hover,
+      &:active {
+        color: #ffa500;
+      }
+    }
+    &--down {
+      &--active,
+      &:hover,
+      &:active {
+        color: #0000ff;
+      }
+    }
+    &:link,
+    &:visited {
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      position: relative;
+      &::before {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        background-color: #ddd;
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

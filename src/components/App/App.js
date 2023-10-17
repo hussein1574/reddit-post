@@ -1,10 +1,12 @@
 import "./App.scss";
-import PostHeader from "../PostHeader/PostHeader";
+import Post from "../Post/Post";
+import Comments from "../Comments/Comments";
 
 export default function App() {
   return (
     <div className="app">
-      <PostHeader />
+      <Post />
+      <Comments />
     </div>
   );
 }

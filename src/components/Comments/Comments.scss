@@ -1,0 +1,66 @@
+@import "../../sass/abstracts/_variables.scss";
+@import "../../sass/abstracts/_mixins.scss";
+.comments {
+  list-style: none;
+  padding: 3rem;
+  font-size: 5rem;
+}
+.comment {
+  &--child > &__author {
+    position: relative;
+    &::before {
+      position: absolute;
+      width: 6rem;
+      height: 3rem;
+      top: 0;
+      left: -6rem;
+      content: "";
+      border: solid #2a3c42;
+      border-radius: 0 0 0 100px;
+      border-width: 0px 0px 1px 1px;
+    }
+  }
+  &__show ~ &__buttons {
+    position: relative;
+    border-left: 1px solid $dark-grey;
+    &::before {
+      cursor: pointer;
+      content: "-";
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      border: 1px solid $dark-grey;
+      background-color: $white;
+    }
+  }
+  &__show + &__text {
+    border-left: 1px solid $dark-grey;
+  }
+  &__text,
+  &__buttons {
+    padding-left: 3rem;
+  }
+  &__replies {
+    margin-left: 6rem;
+    list-style: none;
+  }
+}
+.comment__replies > .comment:not(:last-child) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -6rem;
+    border-left: 1px solid $dark-grey;
+  }
+}
