@@ -1,10 +1,56 @@
+import { useState } from "react";
 import "./PostButtons.scss";
+import { Votes } from "../../utils/Enum";
 
-export default function PostButtons() {
+export default function PostButtons({ comments }) {
+  const [votes, setVotes] = useState(0);
+  const [CurVote, setCurVote] = useState(Votes.NONE);
+
+  function handleVote(voteType) {
+    switch (voteType) {
+      case "up":
+        setCurVote((curVote) => {
+          if (curVote === Votes.UP) {
+            setVotes((curVotes) => curVotes - 1);
+            return Votes.NONE;
+          }
+          if (curVote === Votes.DOWN) {
+            setVotes((curVotes) => curVotes + 2);
+          }
+          if (curVote === Votes.NONE) {
+            setVotes((curVotes) => curVotes + 1);
+          }
+          return Votes.UP;
+        });
+        break;
+      case "down":
+        setCurVote((curVote) => {
+          if (curVote === Votes.DOWN) {
+            setVotes((curVotes) => curVotes + 1);
+            return Votes.NONE;
+          }
+          if (curVote === Votes.UP) {
+            setVotes((curVotes) => curVotes - 2);
+          }
+          if (curVote === Votes.NONE) {
+            setVotes((curVotes) => curVotes - 1);
+          }
+          return Votes.DOWN;
+        });
+        break;
+      default:
+        return Votes.NONE;
+    }
+  }
   return (
     <div className="buttons">
       <span className="btn btn--vote">
-        <button className="btn--circle btn--circle--up">
+        <button
+          onClick={() => handleVote("up")}
+          className={`btn--circle btn--circle--up ${
+            CurVote === Votes.UP ? "btn--circle--up--active" : ""
+          }`}
+        >
           <svg
             rpl=""
             fill="currentColor"
@@ -18,8 +64,13 @@ export default function PostButtons() {
             <path d="M12.877 19H7.123A1.125 1.125 0 0 1 6 17.877V11H2.126a1.114 1.114 0 0 1-1.007-.7 1.249 1.249 0 0 1 .171-1.343L9.166.368a1.128 1.128 0 0 1 1.668.004l7.872 8.581a1.25 1.25 0 0 1 .176 1.348 1.113 1.113 0 0 1-1.005.7H14v6.877A1.125 1.125 0 0 1 12.877 19ZM7.25 17.75h5.5v-8h4.934L10 1.31 2.258 9.75H7.25v8ZM2.227 9.784l-.012.016c.01-.006.014-.01.012-.016Z"></path>
           </svg>
         </button>
-        1K
-        <button className="btn--circle btn--circle--down">
+        {votes}
+        <button
+          onClick={() => handleVote("down")}
+          className={`btn--circle btn--circle--down ${
+            CurVote === Votes.DOWN ? "btn--circle--down--active" : ""
+          }`}
+        >
           <svg
             rpl=""
             fill="currentColor"
@@ -34,7 +85,7 @@ export default function PostButtons() {
           </svg>
         </button>
       </span>
-      <a href="#" className="btn btn--click">
+      <button className="btn btn--click">
         <svg
           rpl=""
           aria-hidden="true"
@@ -48,8 +99,8 @@ export default function PostButtons() {
         >
           <path d="M7.725 19.872a.718.718 0 0 1-.607-.328.725.725 0 0 1-.118-.397V16H3.625A2.63 2.63 0 0 1 1 13.375v-9.75A2.629 2.629 0 0 1 3.625 1h12.75A2.63 2.63 0 0 1 19 3.625v9.75A2.63 2.63 0 0 1 16.375 16h-4.161l-4 3.681a.725.725 0 0 1-.489.191ZM3.625 2.25A1.377 1.377 0 0 0 2.25 3.625v9.75a1.377 1.377 0 0 0 1.375 1.375h4a.625.625 0 0 1 .625.625v2.575l3.3-3.035a.628.628 0 0 1 .424-.165h4.4a1.377 1.377 0 0 0 1.375-1.375v-9.75a1.377 1.377 0 0 0-1.374-1.375H3.625Z"></path>{" "}
         </svg>
-        222
-      </a>
+        {comments.filter((comment) => comment.parent === -1).length}
+      </button>
       <a href="#" className="btn btn--click">
         <svg
           rpl=""

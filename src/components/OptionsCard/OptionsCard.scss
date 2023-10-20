@@ -14,6 +14,8 @@
   font-size: 1.7rem;
   color: $grey;
   cursor: pointer;
+  background-color: $white;
+  z-index: 9999;
   transition: all 0.3s;
   &:hover,
   &:visited {

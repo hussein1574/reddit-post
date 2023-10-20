@@ -1,0 +1,215 @@
+@import "../../sass/abstracts/_variables.scss";
+@import "../../sass/abstracts/_mixins.scss";
+.comment {
+  &--child > &__author {
+    position: relative;
+    &::before {
+      position: absolute;
+      width: 2rem;
+      height: 3.5rem;
+      top: -2rem;
+      left: -2.071rem;
+      content: "";
+      border: solid $light-grey;
+      border-radius: 0 0 0 100px;
+      border-width: 0px 0px 1px 1px;
+    }
+  }
+  &__show > &__buttons {
+    position: relative;
+    border-left: 1px solid $light-grey;
+  }
+  &__buttons--replies {
+    z-index: 9999;
+  }
+  &__show > &__buttons > &__buttons--replies {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid $dark-grey;
+    background-color: $white;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__show > &__text {
+    border-left: 1px solid $light-grey;
+  }
+  &__buttons {
+    z-index: 1;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  &__replies {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 4rem;
+    list-style: none;
+  }
+  &__replies > &:not(:last-child) {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 110%;
+      top: 0;
+      left: -4rem;
+      border-left: 1px solid $light-grey;
+    }
+  }
+  &__author {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    transform: translate(-1.9rem, 1.4rem);
+    &--profile-pic {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      outline: 1px solid $white;
+    }
+    &--username {
+      color: $black;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.3rem;
+      position: relative;
+      &:hover,
+      &:visited {
+        text-decoration: underline;
+      }
+    }
+    &--date {
+      font-size: 1.3rem;
+      color: #576f76;
+    }
+  }
+  &__text {
+    padding: 2rem 5rem 0.4rem 3rem;
+    font-size: 1.5rem;
+  }
+  &__btn {
+    @include btn;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #576f76;
+    &--vote {
+      color: $black;
+    }
+    &--circle {
+      cursor: pointer;
+      height: 100%;
+      border-radius: 50%;
+      z-index: 1;
+      &--up {
+        &--active,
+        &:hover,
+        &:active {
+          color: #ffa500;
+        }
+      }
+      &--down {
+        &--active,
+        &:hover,
+        &:active {
+          color: #0000ff;
+        }
+      }
+      &:link,
+      &:visited {
+        transition: all 0.3s;
+      }
+      &:hover,
+      &:active {
+        position: relative;
+        &::before {
+          z-index: -1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          content: "";
+          background-color: #ddd;
+          height: 3rem;
+          width: 3rem;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    &--click {
+      &:link,
+      &:visited {
+        transition: all 0.3s;
+      }
+      &:hover,
+      &:active {
+        background-color: #ddd;
+        color: $black;
+      }
+    }
+  }
+  &__options {
+    z-index: 1;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    color: #576f76;
+    cursor: pointer;
+    &:link,
+    &:visited {
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $light-grey;
+      color: $black;
+    }
+  }
+  &__add-replay {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+    &--border {
+      border-left: 1px solid #e2e7e9;
+    }
+
+    &__text {
+      align-self: center;
+      padding: 1rem 1rem;
+      width: 90%;
+      height: 5rem;
+      text-align: start;
+      border-radius: 12px;
+      font-family: inherit;
+    }
+    &__btn {
+      @include btn;
+      margin-right: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid $black;
+      font-size: 1.3rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      &:active {
+        background-color: rgba($light-grey, 1);
+      }
+    }
+  }
+}

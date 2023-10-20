@@ -3,12 +3,12 @@
 .post-header {
   display: flex;
   justify-content: space-between;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   &--right {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
     position: relative;
   }
   &--left {
@@ -19,8 +19,8 @@
     position: relative;
   }
   &__profile-pic {
-    width: 4rem;
-    height: 4rem;
+    width: 3.2rem;
+    height: 3.2rem;
     border-radius: 50%;
     grid-row: pic-start / pic-end;
   }
@@ -57,7 +57,7 @@
   }
   &__btn {
     cursor: pointer;
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     background-color: $light-blue;
     color: $white;
     font-weight: 600;
@@ -73,7 +73,7 @@
     }
   }
   &__options {
-    padding: 1rem 1rem;
+    padding: 0.8rem 0.8rem;
     border-radius: 50%;
     font-size: inherit;
     cursor: pointer;
