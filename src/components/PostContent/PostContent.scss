@@ -22,6 +22,9 @@
     display: flex;
     border-radius: 20px;
     overflow: hidden;
+    @media only screen and (max-width: 31.25em) {
+      height: 30vh;
+    }
     &::before {
       content: "";
       top: 0;

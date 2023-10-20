@@ -6,6 +6,15 @@
 
 html {
   font-size: 62.5%;
+  @media only screen and (max-width: 75em) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: 52em) {
+    font-size: 43.75%;
+  }
+  @media only screen and (max-width: 31.25em) {
+    font-size: 30%;
+  }
 }
 
 button {
