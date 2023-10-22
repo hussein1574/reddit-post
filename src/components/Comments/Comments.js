@@ -36,17 +36,18 @@ export default function Comments({ comments, onComment }) {
   }
 
   function addComment() {
-    onComment((comments) => [
-      {
-        author: user,
-        id: Date.now(),
-        content: commentContent,
-        date: Date.now(),
-        votes: [],
-        parent: -1,
-      },
-      ...comments,
-    ]);
+    if (commentContent !== "")
+      onComment((comments) => [
+        {
+          author: user,
+          id: Date.now(),
+          content: commentContent,
+          date: Date.now(),
+          votes: [],
+          parent: -1,
+        },
+        ...comments,
+      ]);
     setCommentContent("");
     setAddCommentOpened(false);
   }

@@ -62,17 +62,18 @@ export default function Comment({
     );
   }
   function handleReplay() {
-    onComment((comments) => [
-      ...comments,
-      {
-        author: user,
-        id: Date.now(),
-        content: replayContent,
-        date: Date.now(),
-        votes: [],
-        parent: comment.id,
-      },
-    ]);
+    if (replayContent !== "")
+      onComment((comments) => [
+        ...comments,
+        {
+          author: user,
+          id: Date.now(),
+          content: replayContent,
+          date: Date.now(),
+          votes: [],
+          parent: comment.id,
+        },
+      ]);
     setReplayContent("");
     setAddReplyOpened(false);
   }
