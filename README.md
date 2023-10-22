@@ -1,6 +1,6 @@
 # Reddit Clone React App
 
-![image](https://github.com/hussein1574/reddit-post/assets/10996722/340fe754-d7de-4848-9da5-5c8cd98ad77a)
+![image](https://github.com/hussein1574/reddit-post/assets/10996722/2d9312bb-b8c8-48d3-8279-ebcf020d55b9)
 
 This React app is a simple clone of a Reddit post page. It allows users to view post, upvote and downvote them, add comments, and reply to comments. This README provides an overview of the project and instructions for running it locally.
 
