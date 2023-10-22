@@ -39,8 +39,12 @@
         &:focus {
           outline: none;
         }
+        @media (hover: hover) {
+          &:hover {
+            background-color: $light-grey;
+          }
+        }
         &--active,
-        &:hover,
         &:active {
           background-color: $light-grey;
         }
@@ -66,8 +70,10 @@
           background-color: white;
         }
         &-item {
-          &:hover {
-            background-color: rgba($light-grey, 1);
+          @media (hover: hover) {
+            &:hover {
+              background-color: rgba($light-grey, 1);
+            }
           }
           button {
             width: 100%;

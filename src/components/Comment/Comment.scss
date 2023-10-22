@@ -86,8 +86,12 @@
       text-decoration: none;
       font-size: 1.3rem;
       position: relative;
-      &:hover,
-      &:visited {
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &:active {
         text-decoration: underline;
       }
     }
@@ -114,15 +118,23 @@
       border-radius: 50%;
       z-index: 1;
       &--up {
+        @media (hover: hover) {
+          &:hover {
+            color: #ffa500;
+          }
+        }
         &--active,
-        &:hover,
         &:active {
           color: #ffa500;
         }
       }
       &--down {
+        @media (hover: hover) {
+          &:hover {
+            color: #0000ff;
+          }
+        }
         &--active,
-        &:hover,
         &:active {
           color: #0000ff;
         }
@@ -131,7 +143,23 @@
       &:visited {
         transition: all 0.3s;
       }
-      &:hover,
+      @media (hover: hover) {
+        &:hover {
+          position: relative;
+          &::before {
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: "";
+            background-color: #ddd;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
       &:active {
         position: relative;
         &::before {
@@ -153,7 +181,12 @@
       &:visited {
         transition: all 0.3s;
       }
-      &:hover,
+      @media (hover: hover) {
+        &:hover {
+          background-color: #ddd;
+          color: $black;
+        }
+      }
       &:active {
         background-color: #ddd;
         color: $black;
@@ -171,8 +204,12 @@
     &:visited {
       transition: all 0.3s;
     }
-
-    &:hover,
+    @media (hover: hover) {
+      &:hover {
+        background-color: $light-grey;
+        color: $black;
+      }
+    }
     &:active {
       background-color: $light-grey;
       color: $black;
