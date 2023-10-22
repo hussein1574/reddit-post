@@ -1,6 +1,6 @@
 # Reddit Clone React App
 
-[Demo](https://redditclone-31lm.onrender.com/)
+![image](https://github.com/hussein1574/reddit-post/assets/10996722/340fe754-d7de-4848-9da5-5c8cd98ad77a)
 
 This React app is a simple clone of a Reddit post page. It allows users to view post, upvote and downvote them, add comments, and reply to comments. This README provides an overview of the project and instructions for running it locally.
 
@@ -56,6 +56,10 @@ npm start
 
 - React: A JavaScript library for building user interfaces.
 - SASS (SCSS): A CSS preprocessor for styling components.
+
+## Visit The Website
+
+You can visit the website: [Reddit Post Clone](https://redditclone-31lm.onrender.com/)
 
 ## License
 
