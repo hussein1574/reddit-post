@@ -63,4 +63,6 @@ You can visit the website: [Reddit Post Clone](https://redditclone-31lm.onrender
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is a Reddit clone and is not affiliated with or endorsed by Reddit. It is for educational and demonstration purposes only.
+
+Copyright © 2023 Hussein Medhat
